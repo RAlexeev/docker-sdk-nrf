@@ -37,7 +37,7 @@ RUN mkdir /opt/gnuarmemb && \
     wget -qO- "https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux.tar.bz2" | tar xj --directory /opt/gnuarmemb --strip-components=1
 ENV ZEPHYR_TOOLCHAIN_VARIANT=gnuarmemb
 ENV GNUARMEMB_TOOLCHAIN_PATH=/opt/gnuarmemb
-RUN echo -e "\n\
+RUN echo "\n\
 export ZEPHYR_TOOLCHAIN_VARIANT=gnuarmemb\n\
 export GNUARMEMB_TOOLCHAIN_PATH=/opt/gnuarmemb\n\
 " >> ~/.zephyrrc
@@ -70,7 +70,9 @@ RUN pip3 install -r nrf/scripts/requirements.txt
 RUN pip3 install -r bootloader/mcuboot/scripts/requirements.txt
 
 # Setting up the command line build environment (https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/gs_installing.html#installing-the-toolchain)
-RUN echo "\nsource /workdir/ncs/zephyr/zephyr-env.sh" >> ~/.bashrc
+RUN echo "\n\
+source /workdir/ncs/zephyr/zephyr-env.sh\n\
+" >> ~/.bashrc
 
 # Setting up the command line build environment (https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Command-Line-Tools)
 WORKDIR /workdir
