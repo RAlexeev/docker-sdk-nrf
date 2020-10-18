@@ -54,9 +54,9 @@ RUN west zephyr-export
 
 # Updating the repositories
 WORKDIR /workdir/ncs/nrf
-# nRF Connect SDK version 1.3.2
+# nRF Connect SDK version latest
 RUN git fetch origin
-RUN git checkout v1.3.2
+RUN git checkout origin/master
 RUN west update
 
 # Installing additional Python dependencies (https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/gs_installing.html#installing-additional-python-dependencies)
