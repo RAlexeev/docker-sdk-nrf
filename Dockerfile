@@ -58,10 +58,6 @@ WORKDIR /workdir/ncs/nrf
 RUN git fetch origin
 RUN git checkout v1.3.2
 RUN west update
-# nRF Connect SDK version latest
-# RUN git fetch origin
-# RUN git checkout origin/master
-# RUN west update
 
 # Installing additional Python dependencies (https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/gs_installing.html#installing-additional-python-dependencies)
 WORKDIR /workdir/ncs
