@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - 'master'
+  schedule:
+    # Build and Publish Docker image with nRF Connect SDK every day at 00:00
+    - cron:  '0 0 * * *'
 
 jobs:
   push:
